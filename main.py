@@ -6,14 +6,16 @@ import glob
 import numpy
 import os 
 
-
 #> List "lst" files in current folder
 full_path = os.path.realpath(__file__) 
 cur_dir = os.path.dirname(full_path)
-print("This file directory only") 
 #print(cur_dir)
 sets = glob.glob(cur_dir + "/*.lst")
 #print(sets)
+
+
+
+
 
 #> Randomly select a set
 myset = numpy.random.choice(sets)
@@ -22,7 +24,6 @@ myset = numpy.random.choice(sets)
 #> open read selected set
 select_set = [line.rstrip('\n') for line in open(myset)]
 #print(select_set)
-
 
 #> Randomly choose items from selected set
 choice_size = numpy.random.choice([1,2,3])
